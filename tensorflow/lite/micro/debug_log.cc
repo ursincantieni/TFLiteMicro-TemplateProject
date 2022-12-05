@@ -35,7 +35,7 @@ limitations under the License.
 // tensorflow/lite/micro/mbed/debug_log.cc.
 
 #include "tensorflow/lite/micro/debug_log.h"
-#include "log.h"
+#include <stdio.h>
 
 #ifndef TF_LITE_STRIP_ERROR_STRINGS
 #include <cstdio>
@@ -47,7 +47,7 @@ extern "C" void DebugLog(const char* s) {
   // maximum reduction in binary size. This is because we have DebugLog calls
   // via TF_LITE_CHECK that are not stubbed out by TF_LITE_REPORT_ERROR.
 #ifdef DO_LOG
-  LOG("%s",s);
+  printf("%s\r\n",s);
 #endif
 #endif
 }

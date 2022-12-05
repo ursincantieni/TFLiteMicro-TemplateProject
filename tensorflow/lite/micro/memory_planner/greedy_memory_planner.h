@@ -45,6 +45,7 @@ constexpr int kOnlinePlannedBuffer = -1;
 // NP-Complete problem, but in practice it should produce one that's decent.
 class GreedyMemoryPlanner : public MicroMemoryPlanner {
  public:
+    TF_LITE_REMOVE_VIRTUAL_DELETE
   GreedyMemoryPlanner();
   ~GreedyMemoryPlanner() override;
 
@@ -159,7 +160,7 @@ class GreedyMemoryPlanner : public MicroMemoryPlanner {
   // Whether buffers have been added since the last plan was calculated.
   bool need_to_calculate_offsets_;
 
-  TF_LITE_REMOVE_VIRTUAL_DELETE
+
 };
 
 }  // namespace tflite

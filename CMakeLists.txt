@@ -97,7 +97,7 @@ include_directories(
         third_party/ruy
 )
 
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT}
+set(TENSORFLOW
         "tensorflow/lite/micro/all_ops_resolver.cc"
         "tensorflow/lite/micro/debug_log.cc"
         "tensorflow/lite/micro/flatbuffer_utils.cc"
@@ -295,6 +295,8 @@ add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT}
         "tensorflow/lite/micro/kernels/var_handle.cc"
         "tensorflow/lite/micro/kernels/zeros_like.cc"
 )
+
+add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT} ${TENSORFLOW})
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
 set(BIN_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.bin)

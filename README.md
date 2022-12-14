@@ -1,4 +1,3 @@
-# l475tflite
+# TFLite Micro Template
 
-
- Template project for Tensorflow Lite on STM32.
+Project template for Tensorflow Lite running on Cortex-M4 MCU.
